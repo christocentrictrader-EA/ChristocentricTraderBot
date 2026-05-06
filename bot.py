@@ -112,7 +112,7 @@ def seasonal_job(context):
 # --- Main ---
 def main():
     updater = Updater(BOT_TOKEN)
-   scheduler = BackgroundScheduler(timezone=pytz.timezone("Africa/Lagos"))
+    scheduler = BackgroundScheduler(timezone=pytz.timezone("Africa/Lagos"))
 
     # Daily rhythm
     scheduler.add_job(good_morning_job, 'cron', hour=4, minute=30, args=[updater.bot])
