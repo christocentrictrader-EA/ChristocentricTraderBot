@@ -1,3 +1,4 @@
+import pytz
 import os
 import json
 import random
@@ -111,7 +112,7 @@ def seasonal_job(context):
 # --- Main ---
 def main():
     updater = Updater(BOT_TOKEN)
-    scheduler = BackgroundScheduler()
+   scheduler = BackgroundScheduler(timezone=pytz.timezone("Africa/Lagos"))
 
     # Daily rhythm
     scheduler.add_job(good_morning_job, 'cron', hour=4, minute=30, args=[updater.bot])
